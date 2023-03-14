@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.blood{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.blood-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.blood-form input{
+    border: 0;
+    border-bottom: 2px black solid;
+    outline: none;
+    margin: 5px;
+  padding: 5px 10px;
+  font-size:10px;
+}
+.blood-form input[type="radio"]{
+    cursor: pointer;
+}
+.submit{
+    cursor: pointer;
+    border: 0;
+    width: 40%;
+   height: auto;
+   color: white;
+   background-color: black;
+
+}
