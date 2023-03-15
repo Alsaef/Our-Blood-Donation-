@@ -36,8 +36,9 @@
               <input class="submit" type="reset" value="reset">
             </select>
             
-        </form>
-    </section><br>
+        </form>  
+    </section> <span style="text-align: center; margin: 10px 360px 0; background-color: aqua;" id="msg"></span>
+    <br>
     <div class="border"></div>
 <section class="help">
    <h2>Our Service</h2>
@@ -76,11 +77,13 @@
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxShhWmO7Qvfu_pQidbN2NTThOf9arqVjT7XOWt5IPhOxSMvL7wJEqyGCWKOe9cPGzggw/exec'
       const form = document.forms['submit-to-google-sheet']
-    
+      const msg = document.getElementById('msg')
       form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => console.log('Success!', response))
+          .then(response =>{
+              msg.innerHTML ="Success"
+          })
           .catch(error => console.error('Error!', error.message))
       })
     </script>
