@@ -13,7 +13,7 @@
 
 <body>
     <section class="blood">
-        <form action="" class="blood-form">
+        <form name="submit-to-google-sheet" class="blood-form">
             <h2>Our Blood Donation &#129656</h2>
             <label for="name"> <input type="text" name="name" placeholder="Name" required></label>
             <label for="email"><input type="email" name="email" placeholder="Email" required></label> 
@@ -21,47 +21,50 @@
             <label for="address"><input type="text" name="address" placeholder="Address" required></label>
             <label for="date"><input type="date" name="date" id=""></label>
         <h2>Select Blood Group</h2>
-            <label for="a-poss"> <input type="radio" name="blood" id="a-poss"  required>A+</label>
-               <label for="a-neg"><input type="radio"  name="blood" id="a-neg"  required>A-</label>
-                <label for="ab-poss"> <input type="radio"  name="blood" id="ab-poss"  required>AB+</label>
-               <label for="ab-neg"><input type="radio"  name="blood" id="ab-neg"  required>AB-</label>
-              <label for="b-poss"> <input type="radio"  name="blood" id="b-poss"  required>B+</label>
-              <label for="b-neg">  <input type="radio" name="blood" id="b-neg"  required>B-</label>
-             <label for="o-poss"><input type="radio" name="blood" id="o-poss"  required>O+</label>
-               <label for="o-neg"> <input type="radio" name="blood" id="o-neg"  required>O-</label>
-               <label for="0b-poss"> <input type="radio" name="blood" id="0b-poss"  required>OB+</label>
-               <label for="ob-neg"> <input type="radio" name="blood" id="ob-neg"  required>OB-</label>
+            <select name="blood" id="" required>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="OB+">OB+</option>
+              <option value="OB-">OB-</option>
               <input class="submit" type="submit" value="submit">
               <input class="submit" type="reset" value="reset">
+            </select>
             
         </form>
-    </section>
+    </section><br>
+    <div class="border"></div>
 <section class="help">
    <h2>Our Service</h2>
     <div class="our-service-section">
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <i class="fa-brands fa-facebook"></i>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Helpline</a>
+              <h5 class="card-title">Facebook</h5>
+              <p class="card-text">You can use our social media service for any need</p>
+              <a href="https://www.facebook.com/profile.php?id=100064069724626" class="btn btn-primary">Helpline</a>
             </div>
 
           </div>
           <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <i class="fa-brands fa-whatsapp"></i>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-success">Helpline</a>
+              <h5 class="card-title">Whatsapp</h5>
+              <p class="card-text">You can use our social media service for any need</p>
+              <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fcall.whatsapp.com%2Fvideo%2FGEUYPpHa8cDihY51aNNdos%3Ffbclid%3DIwAR0VVVWxUsVk9V1ZQ2VzDJ3fZcmUwrB_itM5xVzjY4ctGdIC0yMM6GMQxqE&h=AT3Kx-J1KGv0_QID-R5RMkgAGe1XCQKsLPYXXJiiscgeCA-yi7na0z7Awn7ypu-y1XVU3Uv2kPBwF0Zknk6yoUkIDY7vXDct5ld2jnCNkcwpHX3njmJzaRCNuS-u38hTDMDS0Q" class="btn btn-success">Helpline</a>
             </div>
           </div>
 
           <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <i class="fa-brands fa-twitter"></i>
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title">Twitter</h5>
+              <p class="card-text">You can use our social media service for any need</p>
               <a href="#" class="btn btn-primary">Helpline</a>
             </div>
           </div>
@@ -69,6 +72,18 @@
     </div>
 </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxShhWmO7Qvfu_pQidbN2NTThOf9arqVjT7XOWt5IPhOxSMvL7wJEqyGCWKOe9cPGzggw/exec'
+      const form = document.forms['submit-to-google-sheet']
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
 </body>
 
 </html>
