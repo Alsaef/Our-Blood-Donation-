@@ -5,7 +5,7 @@ body{
 .blood{
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+   
 }
 .blood-form{
     display: flex;
@@ -31,4 +31,31 @@ body{
    color: white;
    background-color: black;
 
+}
+.help{
+    margin-top: 10px;
+}
+.our-service-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+ margin: 10px;
+}
+.fa-facebook{
+    font-size: 40px;
+    color: rgb(24, 175, 251);
+}
+.fa-whatsapp{
+    font-size: 40px;
+    color: lightgreen;
+}
+.fa-twitter{
+    font-size: 40px;
+    color: rgb(24, 175, 251);
+}
+.help h2{
+    text-align: center;
 }
