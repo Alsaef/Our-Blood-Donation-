@@ -6,11 +6,12 @@ body{
     display: flex;
     justify-content: center;
    
+   
 }
 .blood-form{
     display: flex;
     flex-direction: column;
-    width: 50%;
+  
 }
 .blood-form input{
     border: 0;
@@ -37,13 +38,14 @@ body{
 }
 .our-service-section{
     display: flex;
-    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
 }
 .card{
- margin: 10px;
- box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 10px 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .fa-facebook{
     font-size: 40px;
