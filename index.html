@@ -16,11 +16,11 @@
     <section class="blood">
         <form name="submit-to-google-sheet" class="blood-form">
             <h2>Our Blood Donation &#129656</h2>
-            <label for="name"> <input type="text" name="name" placeholder="Name" required></label>
-            <label for="email"><input type="email" name="email" placeholder="Email" required></label> 
-            <label for="number"> <input type="number" name="number" placeholder="Number" required></label>
-            <label for="address"><input type="text" name="address" placeholder="Address" required></label>
-            <label for="date"><input type="date" name="date" id=""></label>
+            <label for="name"> <input class="input-fild" type="text" name="name" placeholder="Name" required></label>
+            <label for="email"><input class="input-fild" type="email" name="email" placeholder="Email" required></label> 
+            <label for="number"> <input class="input-fild" type="number" name="number" placeholder="Number" required></label>
+            <label for="address"><input class="input-fild" type="text" name="address" placeholder="Address" required></label>
+            <label for="date"><input class="input-fild" type="date" name="date" id=""></label>
         <h2>Select Blood Group</h2>
             <select name="blood" id="" required>
               <option value="A+">A+</option>
@@ -33,7 +33,7 @@
               <option value="AB-">AB-</option>
               <option value="OB+">OB+</option>
               <option value="OB-">OB-</option>
-              <input class="submit" type="submit" value="submit">
+              <input class="submit" type="submit" id="btn-submit" value="submit">
               <input class="submit" type="reset" value="reset">
             </select>
             <span style="text-align: center;  background-color: aqua;" id="msg"></span> 
@@ -68,13 +68,14 @@
                 <i class="fa-brands fa-twitter"></i>
               <h5 class="card-title">Twitter</h5>
               <p class="card-text">You can use our social media service for any need</p>
-              <a href="#" class="btn btn-primary">Helpline</a>
+              <a href="#" class="btn btn-primary btn-link-hover-warning" >Helpline</a>
             </div>
           </div>
         
     </div>
 </section>
 </main>
+<script src="clear.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script>
@@ -85,9 +86,14 @@
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
           .then(response =>{
-              msg.innerHTML ="Success"
+              msg.innerHTML ="Success";
+              const inputFild=document.getElementsByClassName('input-fild');
+             for (const input of inputFild) {
+               input.value=""
+             }
           })
           .catch(error => console.error('Error!', error.message))
+          
       })
     </script>
 </body>
